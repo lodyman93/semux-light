@@ -176,7 +176,7 @@ function searchForm(state: DelegatesState, actions: DelegatesActions) {
             flex: 1,
           }}
         />
-        <button type="button" onclick={() => actions.searchInput('')}>Clear</button>
+        <button type="button" class="btn btn-danger btn-sm" onclick={() => actions.searchInput('')}>Clear</button>
       </div>
     </div>
   </form>
@@ -225,6 +225,7 @@ function voteForm(rootState: State, remoteData: RemoteData, state: DelegatesStat
         />
         <button
           type="button"
+          class="btn btn-success btn-sm"
           disabled={disabled || noAmount}
           onclick={() => actions.vote({ rootState, type: 'VOTE' })}
         >
@@ -232,6 +233,7 @@ function voteForm(rootState: State, remoteData: RemoteData, state: DelegatesStat
         </button>
         <button
           type="button"
+          class="btn btn-danger btn-sm"
           disabled={disabled || noAmount}
           onclick={() => actions.vote({ rootState, type: 'UNVOTE' })}
         >
@@ -325,7 +327,7 @@ function voteAmount(state: DelegatesState): BigNumber {
 const formStyles = {
   form: 'w-100',
   row: 'w-100 relative pl5-ns mv1',
-  field: 'w-100 h2 flex pl1-ns',
+  field: 'w-100 flex pl1-ns',
   fieldInput: 'w-100 pa1',
   label: 'dib fw6 f6 static absolute-ns left-0 pt1-ns',
 }
